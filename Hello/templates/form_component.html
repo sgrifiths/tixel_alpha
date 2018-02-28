@@ -1,0 +1,36 @@
+# component form
+
+{# [START form_component] #}
+{% extends "base.html" %}
+
+{% block content %}
+<h3>{{action}} Components</h3>
+
+<form method="POST" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label for="component_id">Component ID</label>
+        <input type="text" name="component_id" id="component_id" value="{{component.id}}" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label for="component_name">Component Name</label>
+        <input type="text" name="component_name" id="component_name" value="{{component.name}}" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label for="component_type">Component Type</label>
+        <input type="text" name="component_type" id="component_type" value="{{component.type}}" class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label for="component_description">Component Description</label>
+        <textarea name="component_description" id="component_description"
+                  class="form-control">{{component.description}}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+</form>
+
+{% endblock %}
+{# [END form] #}

@@ -19,6 +19,7 @@ from flask import current_app, Flask, redirect, url_for
 
 def create_app(config, debug=False, testing=False, config_overrides=None):
     app = Flask(__name__)
+    print(app)
     app.config.from_object(config)
 
     app.debug = debug
@@ -69,9 +70,10 @@ def get_model():
     elif model_backend == 'mongodb':
         from . import model_mongodb
         model = model_mongodb
+    elif model_backend == 'csv':
+        model = model_csv
     else:
         raise ValueError(
             "No appropriate databackend configured. "
             "Please specify datastore, cloudsql, or mongodb")
-
     return model

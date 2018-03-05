@@ -71,6 +71,7 @@ def get_model():
         from . import model_mongodb
         model = model_mongodb
     elif model_backend == 'csv':
+        from . import model_csv
         model = model_csv
     else:
         raise ValueError(

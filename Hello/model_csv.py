@@ -1,8 +1,6 @@
 # csv like database controller
 
 
-from flask import current_app
-
 builtin_list = list
 
 
@@ -11,8 +9,8 @@ def init_app(app):
 
 
 def get_client():
-    return datastore.Client(current_app.config['PROJECT_ID'])
-
+    # return datastore.Client(current_app.config['PROJECT_ID'])
+    print("Returning get_client")
 
 # [START from_datastore]
 def from_datastore(entity):
@@ -28,7 +26,9 @@ def from_datastore(entity):
     if not entity:
         return None
     if isinstance(entity, builtin_list):
-        entity = entity.pop()
+        print(entity)
+        print(entity['id'])
+        #entity = entity.pop()
 
     entity['id'] = entity.key.id
     return entity

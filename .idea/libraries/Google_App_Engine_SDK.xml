@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Google App Engine SDK" type="python">
     <CLASSES>
-      <root url="file://C:/Windows/System32" />
+      <root url="file://$USER_HOME$/OneDrive/Desktop" />
     </CLASSES>
     <SOURCES />
   </library>
